@@ -2,7 +2,7 @@ import 'matched_substring.dart';
 import 'structured_formatting.dart';
 import 'term.dart';
 
-class PlaceAutoCompleteModel {
+class PlaceModel {
   String? description;
   List<MatchedSubstring>? matchedSubstrings;
   String? placeId;
@@ -11,7 +11,7 @@ class PlaceAutoCompleteModel {
   List<Term>? terms;
   List<String>? types;
 
-  PlaceAutoCompleteModel({
+  PlaceModel({
     this.description,
     this.matchedSubstrings,
     this.placeId,
@@ -21,8 +21,8 @@ class PlaceAutoCompleteModel {
     this.types,
   });
 
-  factory PlaceAutoCompleteModel.fromJson(Map<String, dynamic> json) {
-    return PlaceAutoCompleteModel(
+  factory PlaceModel.fromJson(Map<String, dynamic> json) {
+    return PlaceModel(
       description: json['description'] as String?,
       matchedSubstrings: (json['matched_substrings'] as List<dynamic>?)
           ?.map((e) => MatchedSubstring.fromJson(e as Map<String, dynamic>))
